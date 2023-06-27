@@ -26,7 +26,6 @@ actions = [('Action-1', 20, 5),
 
 start_time = time.time()
 profits = []
-name = ''
 # Génération des combinaisons via itertools.combinations
 for elements in range(len(actions)):
     combos = combinations(actions, elements+1)
@@ -44,7 +43,6 @@ for elements in range(len(actions)):
 profits = sorted(profits, key=lambda x: x[0], reverse=True)
 best_profit = profits[0][0]
 best_actions = profits[0][1]
-
 
 print("-" * 50)
 print("Best profit after 2 years : ", round(best_profit, 2), "€")

@@ -48,7 +48,7 @@ best_actions = profits[0][1]
 
 print("-" * 50)
 print("Best profit after 2 years : ", round(best_profit, 2), "€")
-print("Best actions after 2 years : ", best_actions)
+print("Best actions concerned : ", best_actions)
 print("Time elapsed : ", time.time() - start_time, "seconds")
 print("-" * 50)
 

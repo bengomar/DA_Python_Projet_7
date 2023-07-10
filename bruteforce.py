@@ -57,12 +57,13 @@ def algoinvest_bruteforce(budget_max, actions_list, actions_selection=None):
         )
 
 
-actions = create_actions_list()
-best_result = algoinvest_bruteforce(500, actions)
+def display_results(best_result):
+    print("")
+    print("-" * 254)
+    print("Best profit after 2 years : ", best_result[0])
+    print("With following actions : ", best_result[1])
+    print("Time elapsed : ", time.time() - start_time, "seconds")
+    print("-" * 254)
 
-print("")
-print("-" * 254)
-print("Best profit after 2 years : ", best_result[0])
-print("With following actions : ", best_result[1])
-print("Time elapsed : ", time.time() - start_time, "seconds")
-print("-" * 254)
+
+display_results(algoinvest_bruteforce(500, create_actions_list()))

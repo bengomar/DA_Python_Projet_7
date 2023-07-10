@@ -66,4 +66,9 @@ def display_results(best_result):
     print("-" * 254)
 
 
-display_results(algoinvest_bruteforce(500, create_actions_list()))
+def main():
+    display_results(algoinvest_bruteforce(500, create_actions_list()))
+
+
+if __name__ == "__main__":
+    main()

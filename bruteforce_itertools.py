@@ -1,6 +1,6 @@
-from itertools import combinations
 import csv
 import time
+from itertools import combinations
 
 profits = {}
 start_time = time.time()
@@ -19,7 +19,7 @@ with open("actions_list.csv", newline="") as csvfile:
 
 # Génération des combinaisons via itertools.combinations
 for elements in range(len(actions)):
-    combos = combinations(actions, elements+1)
+    combos = combinations(actions, elements + 1)
 
     for combo in combos:
         cost = sum([i[1] for i in combo])
@@ -28,7 +28,7 @@ for elements in range(len(actions)):
             profit = sum([(j[1] * j[2] / 100) for j in combo])
             name = [i[0] for i in combo]
             profits[profit] = name
-            #profits.append([profit, name])
+            # profits.append([profit, name])
 
 profits = sorted(profits.items(), key=lambda x: x[0], reverse=True)
 # profits = sorted(profits, key=lambda x: x[0], reverse=True)
@@ -40,4 +40,3 @@ print("Best profit after 2 years : ", round(best_profit, 2), "€")
 print("With following actions : ", best_actions)
 print("Time elapsed : ", time.time() - start_time, "seconds")
 print("-" * 160)
-

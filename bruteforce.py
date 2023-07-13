@@ -5,8 +5,9 @@ start_time = time.time()
 
 BUDGET_MAX = 500
 file = "actions_list.csv"
-# file = "list.csv"
 
+
+# file = "list.csv"
 
 
 def create_actions_list():
@@ -52,23 +53,27 @@ def algoinvest_bruteforce(budget_max, actions_list, actions_selection=None):
     # Si la liste des actions est vide
     else:
         # donne la somme maximum de profits + les éléments sélectionnés
-
         return (
-            [f"{round(sum([(i[1] * i[2] / 100) for i in actions_selection]), 2)} €", f"{actions_selection}"],
-            f"{sum([i[1] for i in actions_selection])}"
+            f"{round(sum([(i[1] * i[2] / 100) for i in actions_selection]), 2)} €", actions_selection
+
+            # [f"{round(sum([(i[1] * i[2] / 100) for i in actions_selection]), 2)} €", f"{actions_selection}"],
+            # f"{sum([i[1] for i in actions_selection])}"
         )
+
 
 def display_results(best_result):
     print("")
-    print("-" * 254)
-    print("Best profit after 2 years : ", best_result[0][0])
-    print("With following actions : ", best_result[0][1])
-    print("Actions Sum : ", best_result[1])
+    print("-" * 160)
+    print("Best profit after 2 years : ", best_result[0])
+    print("With following actions : ", [i[0] for i in best_result[1]])
+    print("With best actions sum : ", sum([i[1] for i in best_result[1]]))
     print("Time elapsed : ", time.time() - start_time, "seconds")
-    print("-" * 254)
+    print("-" * 160)
+
 
 def main():
     display_results(algoinvest_bruteforce(BUDGET_MAX, create_actions_list()))
+
 
 if __name__ == "__main__":
     main()

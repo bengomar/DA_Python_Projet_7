@@ -1,16 +1,17 @@
 import csv
 import time
 from itertools import combinations
+from termcolor import colored
+
 
 # profits = {}
 profits = []
 start_time = time.time()
 BUDGET_MAX = 500
 file = "actions_list.csv"
-# file = "list.csv"
 
 
-with open(file, newline="") as csvfile:
+with open("./data_input/"+file, newline="") as csvfile:
     reader = csv.reader(csvfile, delimiter=",")
     header = next(reader)
     actions = []
@@ -41,9 +42,12 @@ best_actions = profits[0][1]
 best_price = profits[0][2]
 
 print("")
-print("-" * 160)
-print("Best profit after 2 years : ", round(best_profit, 2), "€")
-print("With following actions : ", best_actions)
-print("With best actions sum : ", best_price)
-print("Time elapsed : ", time.time() - start_time, "seconds")
-print("-" * 160)
+print(" ***************************************")
+print(" * Bruteforce algorithm with itertools *")
+print(" ***************************************")
+print("")
+print(colored("Best profit after 2 years:", "yellow", attrs=["bold"]), round(best_profit, 2), "€")
+print(colored("With following actions:", "yellow", attrs=["bold"]), best_actions)
+print(colored("With best actions sum:", "yellow", attrs=["bold"]), best_price)
+print(colored("Time elapsed: ", "white", attrs=["bold"]), time.time() - start_time, "seconds")
+print("")

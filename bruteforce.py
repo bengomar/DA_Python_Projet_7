@@ -2,18 +2,14 @@ import csv
 import time
 from termcolor import colored
 
-
 start_time = time.time()
 
 BUDGET_MAX = 500
 file = "actions_list.csv"
 
 
-# file = "list.csv"
-
-
 def create_actions_list():
-    with open("./data_input/"+file, newline="") as csvfile:
+    with open("./data_input/" + file, newline="") as csvfile:
         reader = csv.reader(csvfile, delimiter=",")
         header = next(reader)
         output = []
@@ -21,6 +17,9 @@ def create_actions_list():
             for row in reader:
                 output.append((row[0], float(row[1]), float(row[2])))
     return output
+
+
+# print(create_actions_list())
 
 
 def algoinvest_bruteforce(budget_max, actions_list, actions_selection=None):

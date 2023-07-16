@@ -15,7 +15,7 @@ def create_actions_list():
         output = []
         if header is not None:
             for row in reader:
-                if float(row[1]) <= 0:
+                if float(row[1]) <= 0 or float(row[2]) <= 0:
                     pass
                 else:
                     output.append(

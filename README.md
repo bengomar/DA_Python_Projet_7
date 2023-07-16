@@ -28,10 +28,10 @@ source env/bin/activate
 ### Execution des programmes :
 
 Algorithme concernant le traitement des 20 actions:  
-```bruteforce.py```  
-```bruteforce_itertools.py```  
-```optimized_20_actions.py```
+```python bruteforce.py```  
+```python bruteforce_itertools.py```  
+```python optimized_20_actions.py```
 
 Algorithme concernant le traitement des actions de Sienna:  
-```optimized_dataset1.py```  
-```optimized_dataset2.py```
+```python optimized_dataset1.py```  
+```python optimized_dataset2.py```

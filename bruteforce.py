@@ -1,15 +1,17 @@
 import csv
 import time
+
 from termcolor import colored
 
 start_time = time.time()
 
 BUDGET_MAX = 500
-file = "actions_list.csv"
+
+file = "./data_input/actions_list.csv"
 
 
 def create_actions_list():
-    with open("./data_input/" + file, newline="") as csvfile:
+    with open(file, newline="") as csvfile:
         reader = csv.reader(csvfile, delimiter=",")
         header = next(reader)
         output = []
@@ -55,7 +57,7 @@ def algoinvest_bruteforce(budget_max, actions_list, actions_selection=None):
         # donne la somme maximum de profits + les éléments sélectionnés
         return (
             f"{round(sum([(i[1] * i[2] / 100) for i in actions_selection]), 2)} €",
-            actions_selection
+            actions_selection,
         )
 
 
@@ -65,10 +67,22 @@ def display_results(best_result):
     print(" * Bruteforce algorithm *")
     print(" ************************")
     print("")
-    print(colored("Best profit after 2 years:", "yellow", attrs=["bold"]), best_result[0])
-    print(colored("With following actions:", "yellow", attrs=["bold"]), [i[0] for i in best_result[1]])
-    print(colored("With best actions sum:", "yellow", attrs=["bold"]), sum([i[1] for i in best_result[1]]))
-    print(colored("Time elapsed: ", "white", attrs=["bold"]), time.time() - start_time, "seconds")
+    print(
+        colored("Best profit after 2 years:", "yellow", attrs=["bold"]), best_result[0]
+    )
+    print(
+        colored("With following actions:", "yellow", attrs=["bold"]),
+        [i[0] for i in best_result[1]],
+    )
+    print(
+        colored("With best actions sum:", "yellow", attrs=["bold"]),
+        sum([i[1] for i in best_result[1]]),
+    )
+    print(
+        colored("Time elapsed: ", "white", attrs=["bold"]),
+        time.time() - start_time,
+        "seconds",
+    )
     print("")
 
 

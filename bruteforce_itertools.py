@@ -1,16 +1,16 @@
 import csv
 import time
-from itertools import combinations
 
+from itertools import combinations
 from termcolor import colored
+
 
 # profits = {}
 profits = []
 start_time = time.time()
 BUDGET_MAX = 500
 file = "./data_input/actions_list.csv"
-
-
+counter = 0
 with open(file, newline="") as csvfile:
     reader = csv.reader(csvfile, delimiter=",")
     header = next(reader)
@@ -23,7 +23,6 @@ with open(file, newline="") as csvfile:
 # Génération des combinaisons via itertools.combinations
 for elements in range(len(actions)):
     combos = combinations(actions, elements + 1)
-
     for combo in combos:
         cost = sum([i[1] for i in combo])
 

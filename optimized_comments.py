@@ -101,8 +101,11 @@ def algoinvest_dynamique(budget_max, actions_list):
                 print("---------------------------")
                 print("matrice[action - 1][budget]")
                 print("---------------------------")
-                print("matrice[action - 1] = ", matrice[action - 1])
-                print("matrice[action] = ", matrice[action])
+                print(f'{matrice= }')
+                print(f'[action - 1] = [{action-1}]')
+                print(f'[budget] = [{budget}]')
+                print("matrice[0][1] = ", matrice[action - 1][0])
+
                 print(
                     "RESULTAT",
                     colored(matrice[action][budget], "green", attrs=["bold"]),

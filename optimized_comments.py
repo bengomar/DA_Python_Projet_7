@@ -1,4 +1,3 @@
-import csv
 import time
 from pprint import pprint
 
@@ -101,9 +100,9 @@ def algoinvest_dynamique(budget_max, actions_list):
                 print("---------------------------")
                 print("matrice[action - 1][budget]")
                 print("---------------------------")
-                print(f'{matrice= }')
-                print(f'[action - 1] = [{action-1}]')
-                print(f'[budget] = [{budget}]')
+                print(f"{matrice= }")
+                print(f"[action - 1] = [{action-1}]")
+                print(f"[budget] = [{budget}]")
                 print("matrice[0][1] = ", matrice[action - 1][0])
 
                 print(
